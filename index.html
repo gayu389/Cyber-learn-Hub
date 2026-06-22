@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CyberLearn Hub – Interactive Cybersecurity Learning Platform</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <div class="nav-logo">
+    <div class="logo-icon"><i class="ti ti-shield-check"></i></div>
+    <span>CyberLearn Hub</span>
+  </div>
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="showPage('dashboard', this)">
+      <i class="ti ti-layout-dashboard"></i> Dashboard
+    </button>
+    <button class="nav-tab" onclick="showPage('learn', this)">
+      <i class="ti ti-book"></i> Learn
+    </button>
+    <button class="nav-tab" onclick="showPage('tools', this)">
+      <i class="ti ti-tool"></i> Tools
+    </button>
+    <button class="nav-tab" onclick="showPage('analytics', this)">
+      <i class="ti ti-chart-bar"></i> Progress
+    </button>
+  </div>
+  <div class="nav-right">
+    <span class="xp-badge"><i class="ti ti-bolt"></i> 1,240 XP</span>
+    <div class="avatar">AK</div>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div class="main-content">
+
+  <!-- DASHBOARD -->
+  <section class="page active" id="page-dashboard">
+    <div class="welcome-banner">
+      <div>
+        <h2>Welcome back, Alex 👋</h2>
+        <p>You're 68% through your Security Fundamentals path. Keep it up!</p>
+      </div>
+      <div class="banner-badge">
+        <i class="ti ti-flame"></i>
+        <span>7-day streak</span>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Lessons done</div>
+        <div class="stat-val">24 <span class="stat-unit">/ 35</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Current streak</div>
+        <div class="stat-val">7 <span class="stat-unit">days</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Quiz accuracy</div>
+        <div class="stat-val">82<span class="stat-unit">%</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Certificates</div>
+        <div class="stat-val">2</div>
+      </div>
+    </div>
+
+    <h3 class="section-title">Learning Modules</h3>
+    <div class="modules-grid">
+      <div class="module-card" onclick="openModule('awareness')">
+        <div class="module-icon green"><i class="ti ti-shield"></i></div>
+        <h4>Security Awareness</h4>
+        <p>Core concepts, social engineering, and safe digital habits</p>
+        <div class="prog-wrap"><div class="prog-bar" style="width:80%;background:#1D9E75"></div></div>
+        <span class="prog-label">8 / 10 lessons</span>
+      </div>
+      <div class="module-card" onclick="openModule('phishing')">
+        <div class="module-icon amber"><i class="ti ti-fish"></i></div>
+        <h4>Phishing Detection</h4>
+        <p>Identify phishing emails, spoofed links, and social scams</p>
+        <div class="prog-wrap"><div class="prog-bar" style="width:60%;background:#EF9F27"></div></div>
+        <span class="prog-label">6 / 10 lessons</span>
+      </div>
+      <div class="module-card" onclick="openModule('malware')">
+        <div class="module-icon red"><i class="ti ti-bug"></i></div>
+        <h4>Malware Analysis</h4>
+        <p>Types of malware, infection vectors, and removal strategies</p>
+        <div class="prog-wrap"><div class="prog-bar" style="width:40%;background:#E24B4A"></div></div>
+        <span class="prog-label">4 / 10 lessons</span>
+      </div>
+      <div class="module-card" onclick="openModule('network')">
+        <div class="module-icon blue"><i class="ti ti-network"></i></div>
+        <h4>Network Security</h4>
+        <p>Firewalls, VPNs, protocols, and intrusion detection</p>
+        <div class="prog-wrap"><div class="prog-bar" style="width:20%;background:#378ADD"></div></div>
+        <span class="prog-label">2 / 10 lessons</span>
+      </div>
+    </div>
+
+    <h3 class="section-title">Daily Challenge</h3>
+    <div class="daily-card">
+      <div class="daily-icon"><i class="ti ti-target"></i></div>
+      <div class="daily-info">
+        <strong>Phishing Email Identification</strong>
+        <span>5 questions · Medium · +100 XP reward</span>
+      </div>
+      <button class="btn btn-primary" onclick="startQuiz('phishing')">Start</button>
+    </div>
+  </section>
+
+  <!-- LEARN -->
+  <section class="page" id="page-learn">
+    <div id="learn-index">
+      <h3 class="section-title">All Modules</h3>
+      <div class="modules-grid">
+        <div class="module-card" onclick="openModule('awareness')">
+          <div class="module-icon green"><i class="ti ti-shield"></i></div>
+          <h4>Security Awareness</h4>
+          <p>Social engineering, safe habits, and threat landscape</p>
+          <div class="prog-wrap"><div class="prog-bar" style="width:80%;background:#1D9E75"></div></div>
+          <span class="prog-label">8 / 10 lessons</span>
+        </div>
+        <div class="module-card" onclick="openModule('phishing')">
+          <div class="module-icon amber"><i class="ti ti-fish"></i></div>
+          <h4>Phishing Detection</h4>
+          <p>Email scams, spoofed URLs, and credential harvesting</p>
+          <div class="prog-wrap"><div class="prog-bar" style="width:60%;background:#EF9F27"></div></div>
+          <span class="prog-label">6 / 10 lessons</span>
+        </div>
+        <div class="module-card" onclick="openModule('malware')">
+          <div class="module-icon red"><i class="ti ti-bug"></i></div>
+          <h4>Malware Analysis</h4>
+          <p>Viruses, ransomware, trojans, and sandbox analysis</p>
+          <div class="prog-wrap"><div class="prog-bar" style="width:40%;background:#E24B4A"></div></div>
+          <span class="prog-label">4 / 10 lessons</span>
+        </div>
+        <div class="module-card" onclick="openModule('network')">
+          <div class="module-icon blue"><i class="ti ti-network"></i></div>
+          <h4>Network Security</h4>
+          <p>Firewalls, encryption, VPN, and network monitoring</p>
+          <div class="prog-wrap"><div class="prog-bar" style="width:20%;background:#378ADD"></div></div>
+          <span class="prog-label">2 / 10 lessons</span>
+        </div>
+      </div>
+    </div>
+    <div id="learn-detail" style="display:none"></div>
+    <div id="learn-quiz"   style="display:none"></div>
+  </section>
+
+  <!-- TOOLS -->
+  <section class="page" id="page-tools">
+    <h3 class="section-title">Security Tools</h3>
+    <div class="tools-grid">
+
+      <div class="tool-card">
+        <h3><i class="ti ti-lock-check" style="color:#1D9E75"></i> Password Strength Checker</h3>
+        <p>Analyze how strong your password is before using it</p>
+        <input type="password" id="pw-input" placeholder="Type a password..." oninput="checkPassword(this.value)" />
+        <div class="strength-bars" id="sbars">
+          <div class="sbar" id="sb1"></div>
+          <div class="sbar" id="sb2"></div>
+          <div class="sbar" id="sb3"></div>
+          <div class="sbar" id="sb4"></div>
+          <div class="sbar" id="sb5"></div>
+        </div>
+        <div class="strength-label" id="slabel">Enter a password above</div>
+        <div class="result-box" id="pw-tips" style="display:none"></div>
+      </div>
+
+      <div class="tool-card">
+        <h3><i class="ti ti-key" style="color:#534AB7"></i> Password Generator</h3>
+        <p>Generate cryptographically strong passwords instantly</p>
+        <div class="range-wrap">
+          <label>Length</label>
+          <input type="range" min="8" max="32" value="16" id="pw-len"
+            oninput="document.getElementById('pw-len-val').textContent=this.value" />
+          <span id="pw-len-val">16</span>
+        </div>
+        <div class="checkbox-group">
+          <label><input type="checkbox" id="inc-upper" checked /> Uppercase (A–Z)</label>
+          <label><input type="checkbox" id="inc-lower" checked /> Lowercase (a–z)</label>
+          <label><input type="checkbox" id="inc-num"   checked /> Numbers (0–9)</label>
+          <label><input type="checkbox" id="inc-sym"   checked /> Symbols (!@#$...)</label>
+        </div>
+        <button class="btn btn-primary" onclick="generatePassword()">Generate</button>
+        <div class="result-box gen-result" id="gen-result" style="display:none">
+          <span id="gen-pw"></span>
+          <button class="btn copy-btn" onclick="copyPassword()">Copy</button>
+        </div>
+        <div id="copy-msg" style="display:none;font-size:12px;color:#1D9E75;margin-top:6px">
+          ✓ Copied to clipboard
+        </div>
+      </div>
+
+      <div class="tool-card full-width">
+        <h3><i class="ti ti-link" style="color:#E24B4A"></i> Phishing URL Detection System</h3>
+        <p>Paste a URL to check for phishing indicators and suspicious patterns</p>
+        <div class="url-input-row">
+          <input type="text" id="url-input" placeholder="https://example.com/..." />
+          <button class="btn btn-primary" onclick="checkURL()">Analyze URL</button>
+        </div>
+        <div id="url-result" style="display:none"></div>
+        <div class="url-checks">
+          <div class="section-title" style="margin-bottom:8px">What we check for</div>
+          <div class="checks-grid">
+            <span><i class="ti ti-check" style="color:#1D9E75"></i> IP address in URL</span>
+            <span><i class="ti ti-check" style="color:#1D9E75"></i> Misleading subdomains</span>
+            <span><i class="ti ti-check" style="color:#1D9E75"></i> Suspicious TLDs</span>
+            <span><i class="ti ti-check" style="color:#1D9E75"></i> Lookalike domains</span>
+            <span><i class="ti ti-check" style="color:#1D9E75"></i> URL shorteners</span>
+            <span><i class="ti ti-check" style="color:#1D9E75"></i> HTTPS validation</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ANALYTICS -->
+  <section class="page" id="page-analytics">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Total XP</div>
+        <div class="stat-val green-text">1,240</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Rank</div>
+        <div class="stat-val">Silver <span class="stat-unit">→ Gold at 1500</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Time spent</div>
+        <div class="stat-val">8.4 <span class="stat-unit">hrs</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Questions answered</div>
+        <div class="stat-val">142</div>
+      </div>
+    </div>
+
+    <div class="charts-row">
+      <div class="chart-card">
+        <div class="chart-title">Module Progress</div>
+        <div class="bar-chart">
+          <div class="bar-col"><span class="bar-val">80%</span><div class="bar" style="height:96px;background:#1D9E75"></div><span class="bar-label">Awareness</span></div>
+          <div class="bar-col"><span class="bar-val">60%</span><div class="bar" style="height:72px;background:#EF9F27"></div><span class="bar-label">Phishing</span></div>
+          <div class="bar-col"><span class="bar-val">40%</span><div class="bar" style="height:48px;background:#E24B4A"></div><span class="bar-label">Malware</span></div>
+          <div class="bar-col"><span class="bar-val">20%</span><div class="bar" style="height:24px;background:#378ADD"></div><span class="bar-label">Network</span></div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Weekly Activity (lessons)</div>
+        <div class="bar-chart">
+          <div class="bar-col"><span class="bar-val">2</span><div class="bar" style="height:24px;background:#ccc"></div><span class="bar-label">Mon</span></div>
+          <div class="bar-col"><span class="bar-val">3</span><div class="bar" style="height:36px;background:#1D9E75"></div><span class="bar-label">Tue</span></div>
+          <div class="bar-col"><span class="bar-val">1</span><div class="bar" style="height:12px;background:#ccc"></div><span class="bar-label">Wed</span></div>
+          <div class="bar-col"><span class="bar-val">4</span><div class="bar" style="height:48px;background:#1D9E75"></div><span class="bar-label">Thu</span></div>
+          <div class="bar-col"><span class="bar-val">3</span><div class="bar" style="height:36px;background:#1D9E75"></div><span class="bar-label">Fri</span></div>
+          <div class="bar-col"><span class="bar-val">2</span><div class="bar" style="height:24px;background:#5DCAA5"></div><span class="bar-label">Sat</span></div>
+          <div class="bar-col"><span class="bar-val">—</span><div class="bar" style="height:4px;background:#ccc"></div><span class="bar-label">Sun</span></div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="section-title">Certificates</h3>
+    <div class="certs-list">
+      <div class="cert-card">
+        <div class="cert-icon"><i class="ti ti-certificate"></i></div>
+        <div class="cert-info">
+          <strong>Security Awareness Fundamentals</strong>
+          <span>Earned May 12, 2025 · Score: 94%</span>
+        </div>
+        <button class="btn"><i class="ti ti-download"></i> Download</button>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon"><i class="ti ti-certificate"></i></div>
+        <div class="cert-info">
+          <strong>Phishing Detection Specialist</strong>
+          <span>Earned Jun 3, 2025 · Score: 88%</span>
+        </div>
+        <button class="btn"><i class="ti ti-download"></i> Download</button>
+      </div>
+      <div class="cert-card locked">
+        <div class="cert-icon locked-icon"><i class="ti ti-lock"></i></div>
+        <div class="cert-info">
+          <strong>Malware Analysis Expert</strong>
+          <span>Complete 60% more to unlock</span>
+        </div>
+        <span class="badge-locked">40% done</span>
+      </div>
+    </div>
+
+    <h3 class="section-title" style="margin-top:1.5rem">Recent Activity</h3>
+    <div class="chart-card">
+      <div class="activity-feed">
+        <div class="act-item"><div class="act-dot green"></div><div class="act-text">Completed <strong>Recognizing Phishing Emails</strong></div><span class="act-time">2h ago</span></div>
+        <div class="act-item"><div class="act-dot green"></div><div class="act-text">Passed quiz with 90% — <strong>Social Engineering</strong></div><span class="act-time">3h ago</span></div>
+        <div class="act-item"><div class="act-dot amber"></div><div class="act-text">Started <strong>Malware Types & Classification</strong></div><span class="act-time">Yesterday</span></div>
+        <div class="act-item"><div class="act-dot red"></div><div class="act-text">Retried quiz — <strong>Network Protocols</strong> (65%)</div><span class="act-time">Yesterday</span></div>
+        <div class="act-item"><div class="act-dot green"></div><div class="act-text">Earned <strong>7-day streak badge</strong> 🎯</div><span class="act-time">Today</span></div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/tools.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
